@@ -6,6 +6,7 @@
  img {
   display: block;
   max-width: 100%;
+  height: auto;
  }
 .nav-studio-main,
 .address-link,
@@ -48,17 +49,19 @@
 }
 
 .container {
-    width: auto;
-      padding: 0;
+  /* width: auto; */
+  width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
 
 }
 .header .container {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .header {
@@ -150,11 +153,14 @@ h3 {
   /* border-radius: 4px; */
   padding: 72px 24px 40px 16px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   /* min-height: 584px; */
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mobile-studio {
@@ -201,7 +207,7 @@ h3 {
   align-items: center;
   margin-left: auto;
   border: none;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   position: absolute;
   top: 24px;
   right: 24px;
@@ -213,8 +219,8 @@ h3 {
 }
 
 .mobile-address {
-  margin-bottom: 48px;
-  margin-top: 128px;
+  margin-bottom: 24px;
+  margin-top: auto;
 }
 .mobile-sosial {
   display: flex;
@@ -239,7 +245,7 @@ h3 {
 }
 
 .mobile-address-ul li {
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 
@@ -316,11 +322,11 @@ h3 {
 .slogan-title {
   line-height: 1.07;
   max-width: 216px;
-  margin: 0 auto 76px 0;
+  margin: 0 auto 76px;
 }
 
 .slogan .container,
-.our-team .container,
+/* .our-team .container, */
 .portfolio .container
 {
   display: flex;
@@ -400,9 +406,9 @@ h3 {
   gap: 72px;
   display: flex; 
   flex-direction: column;
-  max-width: 1128px;
+  /* max-width: 1128px;
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 16px; */
 }
 .about-company-conteiner {
   display: flex;
@@ -468,14 +474,14 @@ h3 {
 }
 
 .our-team {
-  display: flex;
-  flex-direction: column;
-  padding: 96px 28px;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 96px 0px;
 }
 
 .our-team-ul{
   display: flex;
-  gap: 24px;
+  gap: 72px 24px;
   flex-wrap: wrap;
   justify-content: center;
   flex-basis: calc((100% - 28px * 2) / 1);
@@ -507,7 +513,7 @@ h3 {
 }
 .our-team-li {
   background-color: #FFFFFF;
-  flex-basis: calc((100% - 72px) / 4);
+  width: 264px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
@@ -537,7 +543,7 @@ h3 {
 }
 
 .portfolio {
-  padding: 96px 16px;
+  padding: 96px 0;
   flex-wrap: wrap;
 }
 .portfolio-ul {
@@ -548,9 +554,11 @@ h3 {
   row-gap: 48px;
 }
 .portfolio-li {
-  min-width: 288px;
-  max-width: calc((100% - 16px) / 2);
+  /* min-width: 288px;
+  max-width: calc((100% - 16px) / 2); */
+  width: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-li:hover .overlay {
@@ -582,7 +590,7 @@ h3 {
 }
 .footer {
   background-color: #2e2f42;
-  padding: 96px 16px;
+  padding: 96px 0;
 }
 .footer-text {
   color: #f4f4fd;
@@ -606,8 +614,8 @@ h3 {
   flex-direction: column;
 }
 .footer-logo-p {
-  margin-right: auto;
-  padding-bottom: 72px;
+  /* margin-right: auto; */
+  margin-bottom: 72px;
 }
 
 .fotter-sosial {
@@ -932,6 +940,7 @@ textarea {
   align-items: center;
   justify-content: center;
   fill: transparent;
+  flex-shrink: 0;
 }
 
 input,
@@ -996,11 +1005,16 @@ input:focus+.modal-input-svg
   cursor: pointer;
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 768px) {
+
+.container {
+  width: 768px;
+}
 
 .address {
   display: flex;
   padding-right: 16px;
+  align-items: center;
 }
 
 .mobile-menu {
@@ -1066,7 +1080,7 @@ background-image: linear-gradient(to bottom,
 }
 
 .our-team-ul {
-  max-width: 550px;
+  max-width: 737px;
 }
 
 .portfolio-li {
@@ -1116,8 +1130,10 @@ background-image: linear-gradient(to bottom,
 
 @media screen and (min-width: 1158px) {
   .container {
+    /* width: 1440px; */
   max-width: 1440px;
-  padding: 0px 156px;
+  min-width: 1158px;
+  /* padding: 0px 156px; */
   }
 
 h1 {
@@ -1177,6 +1193,10 @@ h1 {
 
 .about-company li {
   width: calc((100% - 24px * 3) / 4);
+}
+
+.our-team-li {
+  flex-basis: calc((100% - 72px) / 4);
 }
 
 h3 {
